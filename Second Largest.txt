@@ -1,0 +1,19 @@
+class Solution {
+  public:
+    int getSecondLargest(vector<int> &arr) {
+        // code here
+        int first_largest=INT_MIN, second_largest=INT_MAX;
+        
+        for(const auto i:arr){
+            if (i>first_largest){
+                second_largest=first_largest;
+                first_largest=i;
+            }
+            else if(i!=first_largest and i>second_largest) 
+                second_largest=i;
+        }
+        if(second_largest!=INT_MIN)
+            return second_largest;
+        return -1;
+    }
+};
